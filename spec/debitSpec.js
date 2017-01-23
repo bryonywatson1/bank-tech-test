@@ -3,7 +3,7 @@ describe("Debit", function() {
 
   beforeEach(function() {
     debit = new Debit();
-    date = jasmine.createSpyObj('date', ['addDate']);
+    date = jasmine.createSpyObj('date', ['addDate', 'dateIs']);
   });
 
   it("should have an amount", function() {

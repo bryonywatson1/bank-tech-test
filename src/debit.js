@@ -7,4 +7,5 @@ Debit.prototype.addDebit = function(number) {
 
 Debit.prototype.addADate = function(date){
   this.timeStamp = date;
+  date.dateIs(date);
 };

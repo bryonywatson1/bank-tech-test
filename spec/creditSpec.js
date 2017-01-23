@@ -3,7 +3,7 @@ describe("Credit", function() {
 
   beforeEach(function() {
     credit = new Credit();
-    date = jasmine.createSpyObj('date', ['addDate']);
+    date = jasmine.createSpyObj('date', ['addDate', 'dateIs']);
   });
 
   it("should have an amount", function() {
@@ -16,7 +16,7 @@ describe("Credit", function() {
     expect(credit.timeStamp).toEqual(date);
   })
 
-  
+
 
 
 });
