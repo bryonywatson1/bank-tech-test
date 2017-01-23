@@ -1,25 +1,18 @@
 function AccountManager() {
     this.balance = 0;
+    this.allCredit = [];
+    this.allDebit = [];
 }
 AccountManager.prototype.deposit = function(credit) {
+  this.allCredit.push(credit);
   this.balance += credit;
 };
 
 AccountManager.prototype.withdraw = function(debit) {
+  this.allDebit.push(debit);
   this.balance -= debit;
 };
-// AccountManager.prototype.pause = function() {
-//   this.isPlaying = false;
-// };
-//
-// AccountManager.prototype.resume = function() {
-//   if (this.isPlaying) {
-//     throw new Error("song is already playing");
-//   }
-//
-//   this.isPlaying = true;
-// };
-//
-// AccountManager.prototype.makeFavorite = function() {
-//   this.currentlyPlayingSong.persistFavoriteStatus(true);
-// };
+
+AccountManager.prototype.showBalance = function() {
+  return this.balance;
+};

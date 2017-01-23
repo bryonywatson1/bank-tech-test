@@ -3,6 +3,8 @@ describe("AccountManager", function() {
 
   beforeEach(function() {
     accountManager = new AccountManager();
+    credit = jasmine.createSpyObj('credit', ['']);
+    debit = jasmine.createSpyObj('debit', ['']);
   });
 
   it("should be able to deposit an amount", function() {
@@ -16,25 +18,21 @@ describe("AccountManager", function() {
     expect(accountManager.balance).toEqual(50);
   })
 
-  // describe("when song has been paused", function() {
-  //   beforeEach(function() {
-  //     player.play(song);
-  //     player.pause();
-  //   });
-  //
-  //   it("should indicate that the song is currently paused", function() {
-  //     expect(player.isPlaying).toBeFalsy();
-  //
-  //     // demonstrates use of 'not' with a custom matcher
-  //     expect(player).not.toBePlaying(song);
-  //   });
-  //
-  //   it("should be possible to resume", function() {
-  //     player.resume();
-  //     expect(player.isPlaying).toBeTruthy();
-  //     expect(player.currentlyPlayingSong).toEqual(song);
-  //   });
-  // });
+  it('should be able to show a current balance', function() {
+    accountManager.deposit(150);
+    expect(accountManager.showBalance()).toEqual(150);
+  })
+
+  it('should be able to record all credit', function() {
+    accountManager.deposit(credit);
+    expect(accountManager.allCredit).toEqual([credit]);
+  })
+
+it('should be able to record all debit', function() {
+  accountManager.withdraw(debit);
+  expect(accountManager.allDebit).toEqual([debit]);
+})
+
 
 
 });
