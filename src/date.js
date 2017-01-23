@@ -2,13 +2,13 @@ function Date() {
 }
 
 Date.prototype.addDateToCredit = function(credit) {
-  credit.addsADate(this);
+  credit.addADate(this);
 };
 
 Date.prototype.addDateToDebit = function(debit) {
-  debit.addsADate(this);
+  debit.addADate(this);
 }
 
 Date.prototype.dateIs = function(today) {
-  return today;
+  this.value = today;
 }
